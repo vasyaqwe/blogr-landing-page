@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+    background-image: url('../images/bg-pattern-intro-mobile.svg'), linear-gradient(to bottom, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-size: 350%;
+    background-repeat: no-repeat;
+    background-position: 36% 34%;
+    min-height: 70vh;
+    border-bottom-left-radius: 6rem;
+}
+
+
+@media(max-width: 800px) {
+    .nav {
+        transform: translateX(150%);
+        transition: 0.5s ease;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        right: 5%;
+        bottom: auto;
+        /* margin: auto;
+        inset: 20% 0;
+        width: 90%; */
+    }
+
+    .nav[data-visible=true] {
+        transform: translateX(0);
+    }
+
+}
+
+.arrow {
+    transition: all 0.3s ease;
+}
+
+.dropdown {
+    animation: rotateMenu 400ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+.infrastructure {
+    background-color: hsl(237, 17%, 21%);
+    border-top-right-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    background-image: url('../images/bg-pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: top;
+    min-height: 75vh;
+}
+
+footer {
+    border-top-right-radius: 5rem;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+p {
+    line-height: 1.7rem;
+}
+
+nav a {
+    border-bottom: 2px solid transparent;
+    line-height: 0.75rem;
+}
+
+nav a:hover {
+    border-color: white;
+}
+
+footer a {
+    border-bottom: 2px solid transparent;
+    /* line-height: 0.1rem; */
+}
+
+footer a:hover {
+    border-color: hsl(240, 2%, 79%);
+
+}
+
+.dropdown__list a:hover {
+    border: none;
+    color: hsl(240, 10%, 16%);
+}
+
+@keyframes rotateMenu {
+    0% {
+        transform: rotateX(-90deg)
+    }
+
+    70% {
+        transform: rotateX(20deg)
+    }
+
+    100% {
+        transform: rotateX(0deg)
+    }
+}
+
+@media (min-width: 800px) {
+    header {
+        background-image: url('../images/bg-pattern-intro-desktop.svg'), linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-position: 26% 54%;
+        border-bottom-left-radius: 6rem;
+    }
+
+}
+
+@media(min-width: 980px) {
+    .infrastructure {
+        min-height: auto;
+        background-size: 70%;
+        background-position: -50% 84%;
+    }
+
+    .hero__img {
+        content: url('../images/illustration-editor-desktop.svg');
+    }
+
+    .about__img {
+        content: url('../images/illustration-laptop-desktop.svg');
+    }
+}
+
+@media(min-width: 1300px) {
+    .about {
+        min-height: 65vh;
+    }
+}
